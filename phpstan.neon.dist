@@ -1,0 +1,11 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+    level: 9
+    parallel:
+        processTimeout: 300.0
+        maximumNumberOfProcesses: 8
+        jobSize: 20

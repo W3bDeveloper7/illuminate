@@ -1,0 +1,7 @@
+/vendor
+/storage/app/challenge_geodata.sqlite
+/.idea
+/.vscode
+/.vagrant
+.phpunit.result.cache
+tmp_*.php
