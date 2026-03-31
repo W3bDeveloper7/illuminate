@@ -60,4 +60,27 @@ class ApiClient
 
         return $json;
     }
+
+    /**
+     * Final submission: repo URL + CV PDF.
+     *
+     * @return array<string, mixed>
+     */
+    public function submitRepo(string $repoUrl, string $cvPdfPath): array
+    {
+        $response = Http::withToken($this->token)
+            ->attach(
+                name: 'cv',
+                contents: file_get_contents($cvPdfPath),
+                filename: basename($cvPdfPath),
+            )
+            ->post("{$this->baseUrl}/challenge/submit-repo", [
+                'repo_url' => $repoUrl,
+            ]);
+
+        $response->throw();
+
+        /** @var array<string, mixed> */
+        return $response->json();
+    }
 }

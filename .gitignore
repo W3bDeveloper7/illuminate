@@ -1,5 +1,7 @@
 /vendor
 /storage/app/challenge_geodata.sqlite
+/storage/app/cv/
+.pdf
 /.idea
 /.vscode
 /.vagrant
